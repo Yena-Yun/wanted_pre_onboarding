@@ -21,6 +21,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   position: relative;
   padding-top: 75px;
+
+  @media ${(props) => props.theme.medium} {
+    padding-top: 132px;
+  }
 `;
 
 export default App;

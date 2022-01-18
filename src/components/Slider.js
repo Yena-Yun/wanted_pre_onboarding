@@ -64,6 +64,7 @@ export const Slider = () => {
           {slideImg}
           {slideImg}
           {slideImg}
+          {slideImg}
         </SlideList>
       </SlideCellophane>
       <ArrowBtn type='left' onClick={handleLeftClick}>

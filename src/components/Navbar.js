@@ -57,7 +57,6 @@ const Mainbar = styled.div`
   left: 0;
   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
   z-index: 100;
-  margin-bottom: 40px;
 
   @media ${(props) => props.theme.mediumToXXL} {
     height: 50px;
