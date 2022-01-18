@@ -17,20 +17,9 @@ export const Slider = () => {
     scrollRef.current.scrollLeft = window.screen.width - 200;
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex(index + 1);
-      scrollRef.current.scrollLeft += MOVING;
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [index]);
-
-  let imageArray = [];
-
   const slideImg = slides.slides.map((slide) => {
     const { id, src, alt, title, desc } = slide;
-    imageArray.push(slide);
+
     return (
       <>
         <SlideImage key={id}>
@@ -50,6 +39,16 @@ export const Slider = () => {
       </>
     );
   });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex(index + 1);
+
+      scrollRef.current.scrollLeft += MOVING;
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [index]);
 
   const handleLeftClick = () => {
     scrollRef.current.scrollLeft -= MOVING;
@@ -118,10 +117,6 @@ const SlideList = styled.ul`
   scroll-behavior: smooth;
   display: flex;
   justify-content: center;
-`;
-
-const SlideBox = styled.div`
-  position: relative;
 `;
 
 const SlideImage = styled.li`
