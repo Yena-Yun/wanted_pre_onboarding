@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import slides from 'slide.json';
-import { ArrowBtn } from 'components/ArrowBtn';
 import { ReactComponent as LeftBtn } from 'assets/left_arrow.svg';
 import { ReactComponent as RightBtn } from 'assets/right_arrow.svg';
 import { ReactComponent as VisitBtn } from 'assets/visit_arrow.svg';
@@ -67,11 +66,10 @@ export const Slider = () => {
           {slideImg}
         </SlideList>
       </SlideCellophane>
-
-      <ArrowBtn type='left' _onClick={handleLeftClick}>
+      <ArrowBtn type='left' onClick={handleLeftClick}>
         <LeftBtn />
       </ArrowBtn>
-      <ArrowBtn type='right' _onClick={handleRightClick}>
+      <ArrowBtn type='right' onClick={handleRightClick}>
         <RightBtn />
       </ArrowBtn>
     </SlideContainer>
@@ -91,6 +89,26 @@ const SlideCellophane = styled.div`
   position: relative;
 
   &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const ArrowBtn = styled.button`
+  width: 30px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 120px;
+  ${(props) => (props.type === 'left' ? 'left: calc((100% - 1210px) / 2);' : 'right: calc((100% - 1200px) / 2);')}
+  z-index: 5;
+  opacity: 0.5;
+  border-radius: 15px;
+  background-color: #fff;
+  font-size: 16px;
+
+  @media ${(props) => props.theme.extraLarge} {
     display: none;
   }
 `;
@@ -158,6 +176,7 @@ const Desc = styled.h3`
   margin: 0 20px;
   height: 44px;
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.64;
   color: #333;
 
@@ -171,9 +190,6 @@ const Desc = styled.h3`
 
 const Divider = styled.div`
   height: 1px;
-  margin: 0;
-  border: none;
-  flex-shrink: 0;
   background-color: #ececec;
 
   @media ${(props) => props.theme.extraLarge} {
@@ -203,13 +219,13 @@ const VisitIcon = styled.div`
   width: 14px;
   height: 14px;
   position: absolute;
-  top: -2px;
-  left: 65px;
+  top: 12px;
+  left: 67px;
   color: #36f;
 
   @media ${(props) => props.theme.extraLarge} {
     position: static;
     top: 0;
-    left: 0;
+    left: 3px;
   }
 `;

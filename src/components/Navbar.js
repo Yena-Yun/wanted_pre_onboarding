@@ -9,9 +9,9 @@ export const Navbar = () => {
       <MainbarNav>
         <LogoGrid>
           <LogoBox>
-            <MenuBtn>
+            <LogoMenu>
               <img src='https://static.wanted.co.kr/images/icon-menu.png' alt='hamburger-menu' />
-            </MenuBtn>
+            </LogoMenu>
             <Logo>
               <img src='img/wanted-logo.png' alt='logo' />
             </Logo>
@@ -26,9 +26,9 @@ export const Navbar = () => {
             <ShownLi>이벤트</ShownLi>
             <GoneLi>직군별 연봉</GoneLi>
             <GoneLi>이력서</GoneLi>
-            <CommunityLi>커뮤니티</CommunityLi>
+            <SpanLi after='New'>커뮤니티</SpanLi>
             <GoneLi>프리랜서</GoneLi>
-            <AIBetaLi>AI 합격예측</AIBetaLi>
+            <SpanLi after='Beta'>AI 합격예측</SpanLi>
           </ListBox>
           <AsideBox>
             <SearchBtn>
@@ -103,10 +103,9 @@ const LogoBox = styled.div`
   align-items: center;
 `;
 
-const MenuBtn = styled.button`
+const LogoMenu = styled.button`
   width: 29px;
-  margin-top: 7px;
-  margin-left: -5px;
+  margin: 7px 0 0 -5px;
 `;
 
 const Logo = styled.div`
@@ -137,7 +136,6 @@ const MainGrid = styled.div`
 
   @media ${(props) => props.theme.medium} {
     width: 100%;
-    justify-content: space-between;
   } ;
 `;
 
@@ -148,6 +146,10 @@ const ListBox = styled.ul`
 
   @media ${(props) => props.theme.medium} {
     margin-left: 0;
+  }
+
+  @media ${(props) => props.theme.small} {
+    margin-left: 32px;
   }
 
   & li {
@@ -202,7 +204,7 @@ const GoneLi = styled.li`
   }
 `;
 
-const CommunityLi = styled.li`
+const SpanLi = styled.li`
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
@@ -221,57 +223,20 @@ const CommunityLi = styled.li`
 
   &::after {
     height: 100%;
-    content: 'New';
+    content: '${(props) => props.after}';
     display: inline-block;
     vertical-align: middle;
     box-sizing: border-box;
     color: #225fec;
     position: absolute;
     top: 9px;
-    left: 70px;
+    left: ${(props) => (props.after === 'New' ? '71px' : props.after === 'Beta' ? '89px' : '')};
     font-size: 3px;
     font-weight: 400;
 
     @media ${(props) => props.theme.medium} {
-      top: 7px;
-      left: 60px;
-    }
-  }
-`;
-
-const AIBetaLi = styled.li`
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  padding: 15px;
-  position: relative;
-
-  @media ${(props) => props.theme.medium} {
-    font-size: 13px;
-    font-weight: 400;
-    padding: 11px 10px 19px;
-  }
-
-  @media ${(props) => props.theme.small} {
-    display: none;
-  }
-
-  &::after {
-    height: 100%;
-    content: 'Beta';
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    color: #225fec;
-    position: absolute;
-    top: 9px;
-    left: 90px;
-    font-size: 3px;
-    font-weight: 400;
-
-    @media ${(props) => props.theme.medium} {
-      top: 7px;
-      left: 77px;
+      top: 5px;
+      left: ${(props) => (props.after === 'New' ? '61px' : props.after === 'Beta' ? '77px' : '')};
     }
   }
 `;
