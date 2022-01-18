@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import slides from 'slide.json';
 import { ArrowBtn } from 'components/ArrowBtn';
@@ -9,19 +9,28 @@ import { ReactComponent as VisitBtn } from 'assets/visit_arrow.svg';
 export const Slider = () => {
   const scrollRef = useRef(null);
   const sliderRef = useRef(null);
-  const interval = useRef(null);
+  const [index, setIndex] = useState(0);
+
+  const MOVING = 1080;
 
   useEffect(() => {
-    scrollRef.current.scrollLeft = window.screen.width / 2;
+    scrollRef.current.scrollLeft = window.screen.width - 200;
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex(index + 1);
+      scrollRef.current.scrollLeft += MOVING;
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [index]);
 
   let imageArray = [];
 
   const slideImg = slides.slides.map((slide) => {
     const { id, src, alt, title, desc } = slide;
-
     imageArray.push(slide);
-
     return (
       <>
         <SlideImage key={id}>
@@ -41,32 +50,6 @@ export const Slider = () => {
       </>
     );
   });
-
-  const VISIBLE = 'visible';
-  const MOVING = 1080;
-
-  let index = 1;
-
-  const AutoSlide = () => {
-    const [count, setCount] = useState(0);
-    const [index, setIndex] = useState(0);
-
-    const callback = useCallback(() => {
-      imageArray[index === 0 ? imageArray.length - 1 : setIndex(index - 1)].classList.remove(VISIBLE);
-
-      imageArray[index].classList.add(VISIBLE);
-      setIndex(index + 1);
-
-      if (index === imageArray.length) setIndex(0);
-    });
-
-    useEffect(() => {});
-
-    useEffect(() => {
-      const timer = setInterval(callback, 1000);
-      return () => clearInterval(timer);
-    }, [callback]);
-  };
 
   const handleLeftClick = () => {
     scrollRef.current.scrollLeft -= MOVING;

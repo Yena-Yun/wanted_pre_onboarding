@@ -15,6 +15,7 @@ function App() {
     </ThemeProvider>
   );
 }
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

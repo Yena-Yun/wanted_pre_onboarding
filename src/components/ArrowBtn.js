@@ -18,7 +18,7 @@ const ButtonEl = styled.button`
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 194px;
+  top: 120px;
   ${(props) => (props.type === 'left' ? 'left: calc((100% - 1210px) / 2);' : 'right: calc((100% - 1200px) / 2);')}
   z-index: 5;
   opacity: 0.5;
