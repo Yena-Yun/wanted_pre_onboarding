@@ -49,7 +49,6 @@ export const Navbar = () => {
 
 const Mainbar = styled.div`
   width: 100vw;
-  height: 50px;
   background: #fff;
   display: flex;
   justify-content: center;
@@ -60,20 +59,26 @@ const Mainbar = styled.div`
   z-index: 100;
   margin-bottom: 40px;
 
+  @media ${(props) => props.theme.mediumToXXL} {
+    height: 50px;
+    margin: 0 auto;
+  }
+
   @media ${(props) => props.theme.medium} {
     height: 110px;
-  } ;
+  }
 `;
 
 const MainbarNav = styled.div`
-  width: 1060px;
+  max-width: 1060px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   @media ${(props) => props.theme.medium} {
-    margin: 0 48px;
+    width: 975px;
     height: 110px;
+    margin: 0 48px;
     flex-direction: column;
   } ;
 `;
@@ -135,6 +140,13 @@ const ListBox = styled.ul`
   display: flex;
   justify-content: space-between;
   margin-right: 50px;
+
+  & li {
+    @media ${(props) => props.theme.large} {
+      font-size: 13px;
+      font-weight: 400;
+    }
+  }
 `;
 
 const ShownLi = styled.li`

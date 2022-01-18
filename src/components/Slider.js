@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import slides from 'slide.json';
 import { ArrowBtn } from 'components/ArrowBtn';
+import { ReactComponent as LeftBtn } from 'assets/left_arrow.svg';
+import { ReactComponent as RightBtn } from 'assets/right_arrow.svg';
 
 export const Slider = () => {
   const scrollRef = useRef(null);
@@ -53,11 +55,11 @@ export const Slider = () => {
   };
 
   const handleLeftClick = () => {
-    scrollRef.current.scrollLeft -= 1080;
+    scrollRef.current.scrollLeft -= MOVING;
   };
 
   const handleRightClick = () => {
-    scrollRef.current.scrollLeft += 1080;
+    scrollRef.current.scrollLeft += MOVING;
   };
 
   return (
@@ -70,14 +72,10 @@ export const Slider = () => {
         </SlideList>
       </SlideCellophane>
       <ArrowBtn type='left' _onClick={handleLeftClick}>
-        <svg viewBox='0 0 18 18'>
-          <path d='m6.045 9 5.978-5.977a.563.563 0 1 0-.796-.796L4.852 8.602a.562.562 0 0 0 0 .796l6.375 6.375a.563.563 0 0 0 .796-.796L6.045 9z'></path>
-        </svg>
+        <LeftBtn />
       </ArrowBtn>
       <ArrowBtn type='right' _onClick={handleRightClick}>
-        <svg viewBox='0 0 18 18'>
-          <path d='m11.955 9-5.978 5.977a.563.563 0 0 0 .796.796l6.375-6.375a.563.563 0 0 0 0-.796L6.773 2.227a.562.562 0 1 0-.796.796L11.955 9z'></path>
-        </svg>
+        <RightBtn />
       </ArrowBtn>
     </SlideContainer>
   );
@@ -92,7 +90,6 @@ const SlideCellophane = styled.div`
   width: 100%;
   overflow: hidden;
   border: 1px solid #dbdbdb;
-  background: lightblue;
   scroll-behavior: smooth;
   align-items: center;
   position: relative;
@@ -100,15 +97,10 @@ const SlideCellophane = styled.div`
 
 const SlideList = styled.ul`
   width: 30000px;
-  background: lightpink;
   overflow: hidden;
   scroll-behavior: smooth;
   display: flex;
   justify-content: center;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 const SlideImage = styled.li`
