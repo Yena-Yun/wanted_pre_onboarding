@@ -8,7 +8,7 @@ const size = {
 const theme = {
   extraLarge: `(max-width: ${size.extraLarge})`, // 슬라이드 변화
   mediumToXXL: `(min-width: ${size.medium}) and (max-width: ${size.extraLarge})`,
-  large: `(max-width: ${size.large}) and (min-width: ${size.small})`, // 폰트 변화 (이 구간 동안은 작게)
+  large: `(max-width: ${size.large}) and (min-width: ${size.small})`, // 폰트 변화
   medium: `(max-width: ${size.medium})`, // navbar 변화
   small: `(max-width: ${size.small})`, // navbar 갯수 감소
 };

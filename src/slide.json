@@ -2,58 +2,66 @@
   "slides": [
     {
       "id": 0,
-      "src": "https://static.wanted.co.kr/images/banners/1451/725c6862.jpg",
-      "alt": "믿을 것은 데이터 뿐!"
+      "src": "https://static.wanted.co.kr/images/banners/1490/0b775035.jpg",
+      "alt": "마케팅 주니어를 찾습니다",
+      "title": "마케팅 주니어를 찾습니다",
+      "desc": "기업 과제 풀고 취업까지 한번에!"
     },
     {
       "id": 1,
-      "src": "https://static.wanted.co.kr/images/banners/1468/3df61cbc.jpg",
-      "alt": "해, 커리어 EP 02 공개"
+      "src": "https://static.wanted.co.kr/images/banners/1451/725c6862.jpg",
+      "alt": "포트폴리오를 부탁해!",
+      "title": "포트폴리오를 부탁해!",
+      "desc": "디자이너의 포폴 살펴보기"
     },
     {
       "id": 2,
-      "src": "https://static.wanted.co.kr/images/banners/1438/015566ac.jpg",
-      "alt": "스타벅스 굿즈 좋아하세요?"
+      "src": "https://static.wanted.co.kr/images/banners/1468/3df61cbc.jpg",
+      "alt": "해, 커리어 EP 02 공개",
+      "title": "해, 커리어 EP 02 공개",
+      "desc": "마지막 관문 2라운드의 승자는?"
     },
     {
       "id": 3,
-      "src": "https://static.wanted.co.kr/images/banners/1434/fdbbcb06.jpg",
-      "alt": "요즘 MD가 일하는 방법"
+      "src": "https://static.wanted.co.kr/images/banners/1460/619f3af7.jpg",
+      "alt": "개발자 성장 비결 공개!",
+      "title": "개발자 성장 비결 공개!",
+      "desc": "Velog, 글 쓰는 개발자들의 이야기"
     },
     {
       "id": 4,
-      "src": "https://static.wanted.co.kr/images/banners/1435/6cdcea85.jpg",
-      "alt": "유저 경험을 설계하라!"
+      "src": "https://static.wanted.co.kr/images/banners/1473/41f7b36e.jpg",
+      "alt": "개발자 되고싶은 분들!?",
+      "title": "개발자 되고싶은 분들!?",
+      "desc": "프론트엔드 무료 교육과정 참여하기"
     },
     {
       "id": 5,
-      "src": "https://static.wanted.co.kr/images/banners/1454/e504b006.jpg",
-      "alt": "아는 만큼 보인다!"
+      "src": "https://static.wanted.co.kr/images/banners/1484/b2853456.jpg",
+      "alt": "성장하는 개발자가 되려면?",
+      "title": "성장하는 개발자가 되려면?",
+      "desc": "OOO 검색하지 말 것!"
     },
     {
       "id": 6,
-      "src": "https://static.wanted.co.kr/images/banners/1460/619f3af7.jpg",
-      "alt": "개발자 성장 비결 공개!"
+      "src": "https://static.wanted.co.kr/images/banners/1486/fba2df30.jpg",
+      "alt": "성과를 내는 마케팅",
+      "title": "성과를 내는 마케팅",
+      "desc": "실제 사례를 공개합니다!"
     },
     {
       "id": 7,
-      "src": "https://static.wanted.co.kr/images/banners/1473/41f7b36e.jpg",
-      "alt": "나도 개발자 되고 싶다"
+      "src": "https://static.wanted.co.kr/images/banners/1488/baa54448.jpg",
+      "alt": "UX 디자이너의 커리어 설계",
+      "title": "UX 디자이너의 커리어 설계",
+      "desc": "브랜드 가치를 더하는 디자인"
     },
     {
       "id": 8,
-      "src": "https://static.wanted.co.kr/images/banners/1453/7a978579.jpg",
-      "alt": "리크루터 커리어 가이드"
-    },
-    {
-      "id": 9,
-      "src": "https://static.wanted.co.kr/images/banners/1436/e2dd9445.jpg",
-      "alt": "마케터를 위한 데이터"
-    },
-    {
-      "id": 10,
-      "src": "https://static.wanted.co.kr/images/banners/1452/be4ec643.jpg",
-      "alt": "Git? GitHub?"
+      "src": "https://static.wanted.co.kr/images/banners/1489/312a0c29.jpg",
+      "alt": "2022년 달라지는 노동법령",
+      "title": "2022년 달라지는 노동법령",
+      "desc": "노무관리 쟁점 한 눈에 파악하기"
     }
   ]
 }

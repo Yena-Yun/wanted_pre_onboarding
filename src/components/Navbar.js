@@ -35,7 +35,7 @@ export const Navbar = () => {
               <SearchIcon />
             </SearchBtn>
             <SignupLogin>회원가입/로그인</SignupLogin>
-            <Division></Division>
+            <Divider></Divider>
             <Dashboard>기업 서비스</Dashboard>
             <MoreBtn>
               <MoreBtnIcon />
@@ -101,13 +101,13 @@ const LogoBox = styled.div`
 const MenuBtn = styled.button`
   width: 29px;
   margin-top: 7px;
-  margin-left: -15px;
+  margin-left: -5px;
 `;
 
 const Logo = styled.div`
   width: 90px;
   height: 36px;
-  margin-top: -5px;
+  margin-top: 0px;
   margin-left: 2px;
 `;
 
@@ -139,7 +139,7 @@ const MainGrid = styled.div`
 const ListBox = styled.ul`
   display: flex;
   justify-content: space-between;
-  margin-right: 50px;
+  margin: 0 40px 0 30px;
 
   & li {
     @media ${(props) => props.theme.large} {
@@ -279,7 +279,7 @@ const SignupLogin = styled.button`
   } ;
 `;
 
-const Division = styled.div`
+const Divider = styled.div`
   width: 1px;
   height: 10px;
   background: #e1e2e3;
@@ -307,4 +307,9 @@ const Dashboard = styled.button`
 
 const MoreBtn = styled.button`
   padding: 0 5px 0 10px;
+  display: none;
+
+  @media ${(props) => props.theme.medium} {
+    display: block;
+  } ;
 `;

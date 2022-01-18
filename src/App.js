@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-top: 80px;
+  padding-top: 75px;
 `;
 
 export default App;
