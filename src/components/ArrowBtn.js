@@ -2,9 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const ArrowBtn = (props) => {
-  const { type, children } = props;
+  const { type, children, _onClick } = props;
 
-  return <ButtonEl type={type}>{children}</ButtonEl>;
+  return (
+    <ButtonEl type={type} onClick={_onClick}>
+      {children}
+    </ButtonEl>
+  );
 };
 
 const ButtonEl = styled.button`
