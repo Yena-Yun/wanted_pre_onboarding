@@ -80,7 +80,12 @@ const MainbarNav = styled.div`
     height: 110px;
     margin: 0 48px;
     flex-direction: column;
-  } ;
+  }
+
+  @media ${(props) => props.theme.small} {
+    display: block;
+    margin: 0 25px;
+  }
 `;
 
 const LogoGrid = styled.div`
@@ -141,6 +146,10 @@ const ListBox = styled.ul`
   justify-content: space-between;
   margin: 0 40px 0 30px;
 
+  @media ${(props) => props.theme.medium} {
+    margin-left: 0;
+  }
+
   & li {
     @media ${(props) => props.theme.large} {
       font-size: 13px;
@@ -171,6 +180,7 @@ const ShownLi = styled.li`
 
     @media ${(props) => props.theme.small} {
       display: block;
+      margin-left: -40px;
     }
   }
 `;
@@ -205,6 +215,10 @@ const CommunityLi = styled.li`
     padding: 11px 10px 19px;
   }
 
+  @media ${(props) => props.theme.small} {
+    display: none;
+  }
+
   &::after {
     height: 100%;
     content: 'New';
@@ -236,6 +250,10 @@ const AIBetaLi = styled.li`
     font-size: 13px;
     font-weight: 400;
     padding: 11px 10px 19px;
+  }
+
+  @media ${(props) => props.theme.small} {
+    display: none;
   }
 
   &::after {

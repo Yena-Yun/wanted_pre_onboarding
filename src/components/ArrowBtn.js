@@ -25,4 +25,8 @@ const ButtonEl = styled.button`
   border-radius: 15px;
   background-color: #fff;
   font-size: 16px;
+
+  @media ${(props) => props.theme.extraLarge} {
+    display: none;
+  }
 `;
