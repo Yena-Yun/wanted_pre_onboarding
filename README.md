@@ -2,6 +2,9 @@
 
 [배포][https://sleepy-swartz-5f68e3.netlify.app]
 
+[배포](https://sleepy-swartz-5f68e3.netlify.app){: target="_blank"} 
+[노션링크](https://www.notion.so/4627c094e581426f89e131161957f8d8){: target="_blank"}
+
 # link define
 [배포]: https://sleepy-swartz-5f68e3.netlify.app
 
