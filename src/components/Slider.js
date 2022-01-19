@@ -8,14 +8,14 @@ import { ReactComponent as VisitBtn } from 'assets/visit_arrow.svg';
 export const Slider = () => {
   const scrollRef = useRef(null);
   const sliderRef = useRef(null);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
 
   const MAIN = 1060;
   const SPACE = 24;
   const SIDE = 206;
 
   useEffect(() => {
-    scrollRef.current.scrollLeft += SIDE - SPACE * 3;
+    scrollRef.current.scrollLeft += MAIN + SIDE * 2 - SPACE * 9;
   }, []);
 
   let slideArray = slides.slides;
