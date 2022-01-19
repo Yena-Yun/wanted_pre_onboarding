@@ -9,14 +9,13 @@ export const Slider = () => {
   const scrollRef = useRef(null);
   const sliderRef = useRef(null);
   const [index, setIndex] = useState(0);
-  const [bright, setBright] = useState(false);
 
-  const SIDE = 246;
+  const SIDE = 236;
   const MAIN = 1060;
   const SPACE = 24;
 
   useEffect(() => {
-    scrollRef.current.scrollLeft = window.screen.width - SIDE;
+    scrollRef.current.scrollLeft += SIDE - SPACE * 3;
   }, []);
 
   let slideArray = slides.slides;
@@ -26,9 +25,9 @@ export const Slider = () => {
 
     return (
       <>
-        <SlideImage key={id}>
+        <SlideImage key={id} darken={id === index}>
           <img src={src} alt={alt} />
-          <Information>
+          <Information show={id === index}>
             <Title>{title}</Title>
             <Desc>{desc}</Desc>
             <Divider></Divider>
@@ -132,11 +131,11 @@ const SlideImage = styled.li`
   border-radius: 3px 3px 0 0;
   margin-right: 20px;
   position: relative;
+  ${(props) => (props.darken ? 'filter: brightness(100%);' : 'filter: brightness(50%);')};
 
   & img {
     border-radius: 4px;
     object-fit: cover;
-    filter: brightness(50%);
   }
 
   @media ${(props) => props.theme.extraLarge} {
@@ -153,6 +152,7 @@ const Information = styled.div`
   position: absolute;
   top: 126px;
   left: 21px;
+  display: ${(props) => (props.show ? 'block' : 'none')};
 
   @media ${(props) => props.theme.extraLarge} {
     width: 100%;
