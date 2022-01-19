@@ -24,22 +24,20 @@ export const Slider = () => {
     const { id, src, alt, title, desc } = slide;
 
     return (
-      <>
-        <SlideImage key={id} darken={id === index}>
-          <img src={src} alt={alt} />
-          <Information show={id === index}>
-            <Title>{title}</Title>
-            <Desc>{desc}</Desc>
-            <Divider></Divider>
-            <VisitBox>
-              <div>바로가기</div>
-              <VisitIcon>
-                <VisitBtn />
-              </VisitIcon>
-            </VisitBox>
-          </Information>
-        </SlideImage>
-      </>
+      <SlideImage key={id} darken={id === index}>
+        <img src={src} alt={alt} />
+        <Information show={id === index}>
+          <Title>{title}</Title>
+          <Desc>{desc}</Desc>
+          <Divider></Divider>
+          <VisitBox>
+            <div>바로가기</div>
+            <VisitIcon>
+              <VisitBtn />
+            </VisitIcon>
+          </VisitBox>
+        </Information>
+      </SlideImage>
     );
   });
 
@@ -51,8 +49,6 @@ export const Slider = () => {
 
       scrollRef.current.scrollLeft += MOVING;
     }, 3000);
-
-    if (scrollRef.current.clientWidth < 1200) clearInterval(interval);
 
     return () => clearInterval(interval);
   }, [index, slideArray.length, MOVING]);
@@ -135,17 +131,16 @@ const SlideImage = styled.li`
   border-radius: 3px 3px 0 0;
   margin-right: 20px;
   position: relative;
-  ${(props) => (props.darken ? 'filter: brightness(100%);' : 'filter: brightness(50%);')};
 
   & img {
     border-radius: 4px;
     object-fit: cover;
-  }
+    filter: ${(props) => (props.darken ? 'brightness(100%)' : 'brightness(50%)')};
 
-  @media ${(props) => props.theme.extraLarge} {
-    width: 1067px;
-    height: 183px;
-    filter: brightness(100%);
+    @media ${(props) => props.theme.extraLarge} {
+      height: 183px;
+      filter: ${(props) => (props.darken ? 'brightness(100%)' : 'brightness(50%)')};
+    }
   }
 `;
 
@@ -169,6 +164,7 @@ const Information = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    filter: brightness(100%);
   } ;
 `;
 
