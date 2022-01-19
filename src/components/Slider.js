@@ -9,14 +9,19 @@ export const Slider = () => {
   const scrollRef = useRef(null);
   const sliderRef = useRef(null);
   const [index, setIndex] = useState(0);
+  const [bright, setBright] = useState(false);
 
-  const MOVING = 1080;
+  const SIDE = 246;
+  const MAIN = 1060;
+  const SPACE = 24;
 
   useEffect(() => {
-    scrollRef.current.scrollLeft = window.screen.width - 200;
+    scrollRef.current.scrollLeft = window.screen.width - SIDE;
   }, []);
 
-  const slideImg = slides.slides.map((slide) => {
+  let slideArray = slides.slides;
+
+  const slideImg = slideArray.map((slide) => {
     const { id, src, alt, title, desc } = slide;
 
     return (
@@ -39,15 +44,17 @@ export const Slider = () => {
     );
   });
 
+  const MOVING = MAIN + SPACE;
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex(index + 1);
+      setIndex((prev) => (prev === slideArray.length - 1 ? (prev = 0) : prev + 1));
 
       scrollRef.current.scrollLeft += MOVING;
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [index]);
+  }, [index, slideArray.length, MOVING]);
 
   const handleLeftClick = () => {
     scrollRef.current.scrollLeft -= MOVING;
@@ -61,7 +68,6 @@ export const Slider = () => {
     <SlideContainer>
       <SlideCellophane ref={scrollRef}>
         <SlideList ref={sliderRef}>
-          {slideImg}
           {slideImg}
           {slideImg}
           {slideImg}
@@ -87,7 +93,6 @@ const SlideCellophane = styled.div`
   overflow: auto;
   scroll-behavior: smooth;
   align-items: center;
-  position: relative;
 
   &::-webkit-scrollbar {
     display: none;
@@ -131,6 +136,7 @@ const SlideImage = styled.li`
   & img {
     border-radius: 4px;
     object-fit: cover;
+    filter: brightness(50%);
   }
 
   @media ${(props) => props.theme.extraLarge} {
