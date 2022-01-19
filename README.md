@@ -1,6 +1,10 @@
 # 원티드 프리온보딩 코스
 
-[배포](https://sleepy-swartz-5f68e3.netlify.app)
+[배포][https://sleepy-swartz-5f68e3.netlify.app]
+
+# link define
+[배포]: https://sleepy-swartz-5f68e3.netlify.app
+
 <h2><a href="https://sleepy-swartz-5f68e3.netlify.app" target="_blank">https://sleepy-swartz-5f68e3.netlify.app</a></h2>
 <h3>노션링크: https://www.notion.so/4627c094e581426f89e131161957f8d8</h3>
 
