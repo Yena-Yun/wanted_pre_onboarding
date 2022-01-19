@@ -2,7 +2,7 @@
 
 <h2><a href="https://sleepy-swartz-5f68e3.netlify.app" target="_blank">https://sleepy-swartz-5f68e3.netlify.app</a></h2>
 <h3>노션링크: https://www.notion.so/4627c094e581426f89e131161957f8d8</h3>
-(새 창에서 보려면 Ctrl을 누르고 클릭)
+<h3>(새 창에서 보려면 Ctrl을 누른 채로 클릭해주세요👉) </h3>
 
 원티드 메인 페이지의 <br/>
 상단 GNB(Global Navigation Bar)와 슬라이드(Carousel) 구현
