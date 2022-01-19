@@ -1,13 +1,13 @@
 # 원티드 프리온보딩 코스
 
-<h2><a href="https://sleepy-swartz-5f68e3.netlify.app" target="_blank">https://sleepy-swartz-5f68e3.netlify.app</a></h2>
+<h2>배포: <a href="https://sleepy-swartz-5f68e3.netlify.app" target="_blank">https://sleepy-swartz-5f68e3.netlify.app</a></h2>
 <h3>노션링크: https://www.notion.so/4627c094e581426f89e131161957f8d8</h3>
 <h4>(새 창에서 보려면 Ctrl을 누른 채로 클릭👉) </h4>
 
 <br/>
 
 원티드 메인 페이지의 <br/>
-상단 GNB(Global Navigation Bar)와 슬라이드(Carousel) 구현
+상단 GNB(Global Navigation Bar)와 슬라이드(Carousel)를 구현하였습니다.
 
 <img src="https://user-images.githubusercontent.com/68722179/150066998-77c333e2-2842-4d35-97e9-2a8d4ace690c.png" width="600" />
 
