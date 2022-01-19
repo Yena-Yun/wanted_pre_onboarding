@@ -10,9 +10,9 @@ export const Slider = () => {
   const sliderRef = useRef(null);
   const [index, setIndex] = useState(0);
 
-  const SIDE = 236;
   const MAIN = 1060;
   const SPACE = 24;
+  const SIDE = 206;
 
   useEffect(() => {
     scrollRef.current.scrollLeft += SIDE - SPACE * 3;
@@ -52,15 +52,19 @@ export const Slider = () => {
       scrollRef.current.scrollLeft += MOVING;
     }, 3000);
 
+    if (scrollRef.current.clientWidth < 1200) clearInterval(interval);
+
     return () => clearInterval(interval);
   }, [index, slideArray.length, MOVING]);
 
   const handleLeftClick = () => {
     scrollRef.current.scrollLeft -= MOVING;
+    setIndex((prev) => prev - 1);
   };
 
   const handleRightClick = () => {
     scrollRef.current.scrollLeft += MOVING;
+    setIndex((prev) => prev + 1);
   };
 
   return (
@@ -141,6 +145,7 @@ const SlideImage = styled.li`
   @media ${(props) => props.theme.extraLarge} {
     width: 1067px;
     height: 183px;
+    filter: brightness(100%);
   }
 `;
 
