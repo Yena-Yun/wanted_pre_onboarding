@@ -11,6 +11,22 @@
 원티드 메인 페이지의 <br/>
 상단 GNB(Global Navigation Bar)와 슬라이드(Carousel)를 구현하였습니다.
 
+## 디렉토리 구조
+```
+.
+├── App.js
+├── common              
+│   └── Grid.js
+│   └── Button.js
+│   └── Input.js
+├── components          
+│   ├── Navbar.js
+│   └── Slide.js
+├── index.js
+└── reset.css           
+
+```
+
 ## 구현 기능
 1. 상단 GNB와 슬라이드 반응형 구현
 2. 슬라이드 스와이프 기능 구현 
